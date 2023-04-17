@@ -19,9 +19,7 @@
         $batman= new Role("Batman"); // Batman instancié qu'une fois.        
         $superman = new Role("Superman"); // Superman instancié qu'une fois
 
-        var_dump($batman);
-
-        
+        var_dump($batman);        
 
     ?>
 
