@@ -4,14 +4,18 @@
 
     class Actor extends Person{ 
 
-        private Role $role; // lié à la classe role. 
-        private array $movies;
+        private Role $role; // l'acteur est lié à un rôle déjà instancié. 
+        private array $movies; // Les films de cet acteur.
 
-        public function __construct(string $firstname, string $lastname, string $sexe, string $birthDate, string $role){    
+        public function __construct(string $firstname, string $lastname, string $sexe, string $birthDate, Role $role){    
 
             parent :: __construct($firstname, $lastname, $sexe, $birthDate);
-            $this->role = $role;
-            $this->movies = array(); // Films dans lesquels l'acteur a joué            
+            $this->role = $role; 
+            $this->movies = array(); // Films dans lesquels l'acteur a joué    
+            
+            // Quand on créé un acteur, ça ajoute immédiatement son nom au rôle qu'il a joué.
+            $role->addRole($this) 
+            // la fct sera créée plus tard. cette fonction pushera l'array Role de cet acteur.
 
         }
     }

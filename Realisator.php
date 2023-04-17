@@ -10,7 +10,7 @@
 
             parent :: __construct ($firstname, $lastname, $sexe, $birthDate);
             
-            $this->moviesRealised = array();
+            $this->moviesRealised = array(); // Liste des films réalisés par ce réalisateur qui sera push à chaque création de film.
 
         }
         
