@@ -8,7 +8,7 @@
 
         public function __construct(string $firstname, string $lastname, string $sexe, string $birthDate){
 
-            parent :: __construct (string $firstname, string $lastname, string $sexe, string $birthDate);
+            parent :: __construct ($firstname, $lastname, $sexe, $birthDate);
             
             $this->moviesRealised = array();
 

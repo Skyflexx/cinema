@@ -4,16 +4,14 @@
 
     class Actor extends Person{ 
 
-        private string $role;
+        private Role $role; // lié à la classe role. 
         private array $movies;
 
         public function __construct(string $firstname, string $lastname, string $sexe, string $birthDate, string $role){    
 
-            parent :: __construct (string $firstname, string $lastname, string $sexe, string $birthDate);
+            parent :: __construct($firstname, $lastname, $sexe, $birthDate);
             $this->role = $role;
-            $this->movies = array();     
-            
-            test
+            $this->movies = array(); // Films dans lesquels l'acteur a joué            
 
         }
     }
