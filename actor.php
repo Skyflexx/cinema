@@ -11,7 +11,7 @@
 
             parent :: __construct (string $firstname, string $lastname, string $sexe, string $birthDate);
             $this->role = $role;
-            $this->movies = array();           
+            $this->movies = array();        
 
         }
     }
