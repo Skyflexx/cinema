@@ -7,35 +7,144 @@
         private string $name;
         private DateTime $releaseDate;
         private int $duration;
-        private string $type; //type de film
-        private array $Actors; // La liste des acteurs sera actualisée dans un array. Un acteur sera lié à un film. Par récursion.
-        private Realisator $realName;
+        private Genre $genre; //type de film  
+        private string $synopsis; // le résumé du film      
+        private Realisator $realisator;
+        private array $castings;
+       
 
-        public function __construct(string $name, string $releaseDate, int $duration, string $type, array $actors, Realisator $realName){
+        public function __construct(string $name, string $releaseDate, int $duration, Genre $genre, string $synopsis, Realisator $realisator){
 
             $this->name = $name;
-            $this->releaseDate = new Datetime ($releaseDate);
+            $this->releaseDate = new Datetime($releaseDate);
             $this->duration = $duration;
-            $this->type = $type;
-            $this->actors = array(); // Liste des acteurs de ce film qui sera push à la création du film.
-            $this->realisator = $realisator;
+            $this->genre = $genre;
+            $this->synopsis = $synopsis;
+            $this-> realisator = $realisator;  
+            $this->castings = array(); 
+                 
 
-            // Lors de la création d'un film on push immédiatement sur la filmographie du réalisateur.
+            // Lors de la création d'un film on push immédiatement sur la filmographie du réalisateur et sur le Genre concerné.
 
-            $realisator->addMovie($this); // la méthode sera créée plus tard dans la classe Réalisateur.
+            $realisator->addMovie($this);
+            $genre->addMovie($this);
+        
+        }
+       
+        public function getName()
+        {
+                return $this->name;
+        }
 
-            
-            // Foreach ($this->actors as $movie){
+        
+        public function setName($name)
+        {
+                $this->name = $name;
 
-                // $actor->addMovie($this);    // Actor étant l'objet contenu dans chaque partie de l'array
+                return $this;
+        }
 
-            //}
+       
+        public function getReleaseDate()
+        {
+                return $this->releaseDate;
+        }
 
-            // Pour chaque acteur de l'array, on va push ce film à leur filmographie           
-           
+       
+        public function setReleaseDate($releaseDate)
+        {
+                $this->releaseDate = $releaseDate;
+
+                return $this;
+        }
+
+       
+        public function getDuration()
+        {
+                return $this->duration;
+        }
+
+      
+        public function setDuration($duration)
+        {
+                $this->duration = $duration;
+
+                return $this;
+        }
+
+        
+        public function getGenre()
+        {
+                return $this->genre;
+        }
+
+      
+        public function setGenre($genre)
+        {
+                $this->genre = $genre;
+
+                return $this;
+        }
+
+       
+        public function getSynopsis()
+        {
+                return $this->synopsis;
+        }
+
+      
+        public function setSynopsis($synopsis)
+        {
+                $this->synopsis = $synopsis;
+
+                return $this;
+        }
+
+       
+        public function getRealisator()
+        {
+                return $this->realisator;
+        }
+
+        
+        public function setRealisator($realisator)
+        {
+                $this->realisator = $realisator;
+
+                return $this;
+        }
+
+        // METHODES PRINCIPALES
+
+        public function getInfosMovie(){
+            return "<h3>$this</h3> Réalisé par " . $this->realisator . "<br> Durée : ". $this->duration. " minutes. "." <br> Genre : ". $this->genre
+            ." <br> Résumé : ".$this->synopsis."<br>";
+        }
+
+        public function addCasting($casting){
+
+            $this->castings[] = $casting;
 
         }
-        
+
+        public function getCasting(){
+
+            $list = "<h3> Casting de $this : </h3>";
+
+            foreach ($this->castings as $casting){
+
+                $list .=  $casting->getActor(). " dans le role de : ".$casting->getRole()." <br> ";
+
+            }
+
+            return $list;
+        }
+
+        public function __toString(){
+            return $this->name;
+        }
+
+
     }
 
 

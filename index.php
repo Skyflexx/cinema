@@ -8,18 +8,41 @@
 
     <?php 
 
-        include "Person.php";
-        include "Actor.php";
-        include "Realisator.php";
-        include "Movie.php";
-        include "Genre.php";
-        include "Role.php";
+        spl_autoload_register(function ($class_name) {
+            include $class_name . '.php';
+        });
 
+        $tarantino = new Realisator ("Quentin", "Tarantino", "M", "03/27/1963");
 
-        $batman= new Role("Batman"); // Batman instancié qu'une fois.        
-        $superman = new Role("Superman"); // Superman instancié qu'une fois
+        $sf = new Genre ("Science Fiction");
+        $artsMartiaux = new Genre ("Arts Martiaux");
 
-        var_dump($batman);        
+        $movie1 = new Movie ("Kill Bill", "10/10/2003", 120, $artsMartiaux, "C'est l'histoire d'une dame qui veut absolument tuer Bill...", $tarantino );
+        $movie2 = new Movie ("Kill Bill Vol. 2", "10/10/2005", 120, $artsMartiaux, "C'est l'histoire d'une dame qui veut ENCORE absolument tuer Bill...", $tarantino );
+
+        $role1 = new Role ("Beatrix Kiddo");
+        $role2 = new Role ("Bill");
+
+        $actor1 = new Actor ("Uma", "Thurmann", "F", "04/29/1970");
+        $actor2 = new Actor ("David", "Caradine", "M", "12/08/1936");
+
+        $casting1 = new Casting ($actor1, $role1, $movie1);
+        $casting2 = new Casting ($actor1, $role1, $movie2);
+        $casting3 = new Casting ($actor2, $role2, $movie1);
+        $casting4 = new Casting ($actor2, $role2, $movie2);
+
+       
+       echo $tarantino->getMoviesList();
+
+       echo $artsMartiaux->getMoviesList();
+
+       echo $movie1->getInfosMovie(); 
+
+       echo $actor1->getFilmography();
+
+       echo $role1->getActorsInRole();
+       
+       echo $movie1->getCasting();   
 
     ?>
 
