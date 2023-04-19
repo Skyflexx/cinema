@@ -21,7 +21,7 @@
             $this->duration = $duration;
             $this->genre = $genre;
             $this->synopsis = $synopsis;
-            $this-> realisator = $realisator;  
+            $this->realisator = $realisator;  
             $this->castings = array(); 
             $this->photoMovie = $photoMovie;
                  

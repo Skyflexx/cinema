@@ -58,6 +58,19 @@
 
                 return $this;
         }
+
+        public function sort(){
+
+                function tri($a, $b){
+
+                        if ($a==$b) {
+                                return 0;
+                        } return ($a < $b) ? -1 : 1;        
+                }   
+                
+                usort($this->Movie->Movies, "tri"); 
+
+        }
     }
 
 ?>
