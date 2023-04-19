@@ -19,13 +19,13 @@
         $action = new Genre ("Action");
         $artsMartiaux = new Genre ("Arts Martiaux");
 
-        $movie1 = new Movie ("Kill Bill", "10/10/2003", 120, $artsMartiaux, "C'est l'histoire d'une dame qui veut absolument tuer Bill...", $tarantino );
+        $movie1 = new Movie ("Kill Bill", "10/10/2003", 120, $artsMartiaux, "C'est l'histoire d'une dame qui veut absolument tuer Bill...", $tarantino, "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Killbill-vol1-logo.svg/220px-Killbill-vol1-logo.svg.png" );
 
-        $movie2 = new Movie ("Kill Bill Vol. 2", "10/10/2005", 120, $artsMartiaux, "C'est l'histoire d'une dame qui veut ENCORE absolument tuer Bill...", $tarantino );
+        $movie2 = new Movie ("Kill Bill Vol. 2", "10/10/2005", 120, $artsMartiaux, "C'est l'histoire d'une dame qui veut ENCORE absolument tuer Bill...", $tarantino, "https://fr.web.img6.acsta.net/c_310_420/medias/nmedia/18/35/13/45/18377926.jpg" );
 
-        $movie3 = new Movie ("Batman Begins", "01/01/2005", 140, $action, "Le jeune Bruce Wayne assiste impuissant au meurtre de ses parents. Profondément traumatisé, il grandit obnubilé par un désir de vengeance et voyage aux quatre coins du monde pour étudier la criminologie et les arts martiaux.", $nolan);
+        $movie3 = new Movie ("Batman Begins", "01/01/2005", 140, $action, "Le jeune Bruce Wayne assiste impuissant au meurtre de ses parents. Profondément traumatisé, il grandit obnubilé par un désir de vengeance et voyage aux quatre coins du monde pour étudier la criminologie et les arts martiaux.", $nolan, "https://fr.web.img6.acsta.net/c_310_420/pictures/22/10/04/08/52/2484953.jpg");
 
-        $movie4 = new Movie ("Batman", "01/01/1989", 126, $action, "Batman est un film fantastique et de super-héros américano-britannique de Tim Burton, sorti en 1989.", $burton);
+        $movie4 = new Movie ("Batman", "01/01/1989", 126, $action, "Batman est un film fantastique et de super-héros américano-britannique de Tim Burton, sorti en 1989.", $burton, "https://fr.web.img5.acsta.net/c_310_420/pictures/22/10/07/09/47/0708130.jpg");
         
 
         $role1 = new Role ("Beatrix Kiddo");
@@ -51,9 +51,7 @@
        
        echo $tarantino->getMoviesList();
 
-       echo $artsMartiaux->getMoviesList();
-
-       echo $movie1->getInfosMovie(); 
+       echo $artsMartiaux->getMoviesList();       
 
        echo $actor1->getFilmography();
 
@@ -65,9 +63,15 @@
 
        echo $role3->getActorsInRole();
 
+       echo $action->getMoviesList(); 
+
+       echo $movie1->getInfosMovie(); 
+
+       echo $movie2->getInfosMovie();
+
        echo $movie3->getInfosMovie();
 
-       echo $action->getMoviesList();     
+       echo $movie4->getInfosMovie();           
 
     ?>
 

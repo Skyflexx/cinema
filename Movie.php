@@ -11,9 +11,10 @@
         private string $synopsis; // le résumé du film      
         private Realisator $realisator;
         private array $castings;
+        private string $photoMovie;
        
 
-        public function __construct(string $name, string $releaseDate, int $duration, Genre $genre, string $synopsis, Realisator $realisator){
+        public function __construct(string $name, string $releaseDate, int $duration, Genre $genre, string $synopsis, Realisator $realisator, string $photoMovie){
 
             $this->name = $name;
             $this->releaseDate = new Datetime($releaseDate);
@@ -22,6 +23,7 @@
             $this->synopsis = $synopsis;
             $this-> realisator = $realisator;  
             $this->castings = array(); 
+            $this->photoMovie = $photoMovie;
                  
 
             // Lors de la création d'un film on push immédiatement sur la filmographie du réalisateur et sur le Genre concerné.
@@ -118,7 +120,7 @@
 
         
 
-        public function durationFormat(){ 
+        public function durationFormat(){ // Fonction permettant de convertir la durée d'un film en nbr d'heures et minutes.
 
                 $hours = intdiv($this->duration, 60); // exemple : division entière de 140 par 60 minutes . On obtient 2 par exemple. 2 heures.
 
@@ -134,7 +136,7 @@
 
                 return "<h3>$this</h3> Réalisé par " . $this->realisator . "<br> Durée : ". $this->durationFormat(). ". <br> Genre : ". $this->genre
     
-                ." <br> Résumé : ".$this->synopsis."<br>";
+                ." <br> Résumé : ".$this->synopsis."<br>"."<img class='photoMovie' src='$this->photoMovie'>"; // Insertion de l'image du film  avec une classe préétablie pour le css                           
     
             }
 
