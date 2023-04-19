@@ -10,7 +10,7 @@
         private Genre $genre; //type de film  
         private string $synopsis; // le résumé du film      
         private Realisator $realisator;
-        private array $castings;
+        // private array $castings;
        
 
         public function __construct(string $name, string $releaseDate, int $duration, Genre $genre, string $synopsis, Realisator $realisator){
@@ -21,7 +21,7 @@
             $this->genre = $genre;
             $this->synopsis = $synopsis;
             $this-> realisator = $realisator;  
-            $this->castings = array(); 
+        //     $this->castings = array(); 
                  
 
             // Lors de la création d'un film on push immédiatement sur la filmographie du réalisateur et sur le Genre concerné.
@@ -117,8 +117,11 @@
         // METHODES PRINCIPALES
 
         public function getInfosMovie(){
+
             return "<h3>$this</h3> Réalisé par " . $this->realisator . "<br> Durée : ". $this->duration. " minutes. "." <br> Genre : ". $this->genre
+
             ." <br> Résumé : ".$this->synopsis."<br>";
+            
         }
 
         public function addCasting($casting){

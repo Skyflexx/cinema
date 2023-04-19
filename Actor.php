@@ -4,13 +4,13 @@
 
     class Actor extends Person{ 
         
-        private array $castings; 
+        // private array $castings; 
 
         public function __construct(string $firstname, string $lastname, string $sexe, string $birthDate){    
 
             parent :: __construct($firstname, $lastname, $sexe, $birthDate);
              
-            $this->castings = array();              
+        //     $this->castings = array();              
 
         }
 

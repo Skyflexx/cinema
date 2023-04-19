@@ -67,7 +67,7 @@
 
        echo $movie3->getInfosMovie();
 
-       echo $action->getMoviesList();
+       echo $action->getMoviesList();       
 
     ?>
 
