@@ -10,7 +10,7 @@
         private Genre $genre; //type de film  
         private string $synopsis; // le résumé du film      
         private Realisator $realisator;
-        // private array $castings;
+        private array $castings;
        
 
         public function __construct(string $name, string $releaseDate, int $duration, Genre $genre, string $synopsis, Realisator $realisator){
@@ -21,7 +21,7 @@
             $this->genre = $genre;
             $this->synopsis = $synopsis;
             $this-> realisator = $realisator;  
-        //     $this->castings = array(); 
+            $this->castings = array(); 
                  
 
             // Lors de la création d'un film on push immédiatement sur la filmographie du réalisateur et sur le Genre concerné.
@@ -116,13 +116,27 @@
 
         // METHODES PRINCIPALES
 
+        
+
+        public function durationFormat(){ 
+
+                $hours = intdiv($this->duration, 60); // exemple : division entière de 140 par 60 minutes . On obtient 2 par exemple. 2 heures.
+
+                $minuts = $this->duration - ($hours * 60); // Soustraction de 140 min - 2 * 60 = 20 minutes restantes.
+
+                $duration = "$hours heures, $minuts minutes";
+
+                return $duration;
+
+        }
+
         public function getInfosMovie(){
 
-            return "<h3>$this</h3> Réalisé par " . $this->realisator . "<br> Durée : ". $this->duration. " minutes. "." <br> Genre : ". $this->genre
-
-            ." <br> Résumé : ".$this->synopsis."<br>";
-            
-        }
+                return "<h3>$this</h3> Réalisé par " . $this->realisator . "<br> Durée : ". $this->durationFormat(). ". <br> Genre : ". $this->genre
+    
+                ." <br> Résumé : ".$this->synopsis."<br>";
+    
+            }
 
         public function addCasting($casting){
 
