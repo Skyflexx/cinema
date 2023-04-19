@@ -41,8 +41,8 @@
         $cast1 = new Casting ($actor1, $role1, $movie1); // Uma dans kill bill
         $cast2 = new Casting ($actor2, $role2, $movie1); // Uma dans kill bill 2
 
-        $cast3 = new Casting ($actor1, $role1, $movie2);       
-        $cast4 = new Casting ($actor2, $role2, $movie2);
+        $cast3 = new Casting ($actor1, $role1, $movie2); // David dans Kill Bill 1       
+        $cast4 = new Casting ($actor2, $role2, $movie2); // David dans Kill Bill 1 
 
         $cast5 = new Casting ($actor3, $role3, $movie3); // Bale dans batman begins
 
@@ -66,6 +66,8 @@
        echo $role3->getActorsInRole();
 
        echo $movie3->getInfosMovie();
+
+       echo $action->getMoviesList();
 
     ?>
 
