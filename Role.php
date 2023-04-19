@@ -5,14 +5,13 @@
     class Role {
 
         private string $roleName;
-        private array $actors;
-        private array $movies;
+        private array $castings;        
 
         public function __construct($roleName){
 
             $this->roleName = $roleName;
-            $this->actors = array(); // Initialisation de l'array actors qui regroupera tous les acteurs de ce rôle.
-            $this->movies = array();
+            $this->castings = array(); // Initialisation de l'array actors qui regroupera tous les acteurs de ce rôle.
+           
         }
         
          
