@@ -12,7 +12,7 @@
             $this->role = $role;
             $this->movie = $movie;
 
-            $actor->addCasting($this);
+            $actor->addCasting($this);            
             $role->addCasting($this);
             $movie->addCasting($this);
             
@@ -59,6 +59,7 @@
                 return $this;
         }
 
+              
         
     }
 

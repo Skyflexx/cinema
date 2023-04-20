@@ -10,7 +10,7 @@
 
             parent :: __construct($firstname, $lastname, $sexe, $birthDate);
              
-            $this->castings = array();              
+            $this->castings = array();               
 
         }
 
@@ -76,11 +76,11 @@
 
         public function addCasting($casting){                  
                 
-                $this->castings[] = $casting;                        
-
+                $this->castings[] = $casting; 
+        
         }
 
-        public function getFilmography(){
+        public function getFilmography(){          
                
 
             $list = "<h3> Filmographie de $this : </h3>";
@@ -89,23 +89,12 @@
 
                 $list .= $casting->getMovie()." <br> ";
 
-            }            
+            }              
 
             return $list;
         }
 
-        public function sort(){
-
-                function tri($a, $b){
-
-                        if ($a==$b) {
-                                return 0;
-                        } return ($a < $b) ? -1 : 1;        
-                }   
-                
-                usort($this->castings, "tri"); 
-
-        }
+        
 
         public function __toString(){
             return $this->firstname." ".$this->lastname;

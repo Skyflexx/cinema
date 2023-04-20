@@ -11,6 +11,7 @@
         spl_autoload_register(function ($class_name) {
             include $class_name . '.php';
         });
+              
 
         $tarantino = new Realisator ("Quentin", "Tarantino", "M", "03/27/1963");
         $nolan = new Realisator ("Christopher", "Nolan", "M", "07/01/1970");
@@ -38,12 +39,12 @@
         $actor4 = new Actor ("Michael", "Keaton", "M", "09/05/1951");
 
 
-        $cast3 = new Casting ($actor1, $role1, $movie2); // Uma dans Kill Bill 1       
-        $cast4 = new Casting ($actor2, $role2, $movie2); // David dans Kill Bill 1 
+        $cast3 = new Casting ($actor1, $role1, $movie2); // Uma dans Kill Bill 2      
+        $cast4 = new Casting ($actor2, $role2, $movie2); // David dans Kill Bill 2
 
 
         $cast1 = new Casting ($actor1, $role1, $movie1); // Uma dans kill bill
-        $cast2 = new Casting ($actor2, $role2, $movie1); // David dans kill bill 2
+        $cast2 = new Casting ($actor2, $role2, $movie1); // David dans kill bill 1
 
        
 
@@ -56,29 +57,27 @@
 
        echo $artsMartiaux->getMoviesList();       
 
-       echo $actor1->getFilmography();
-
-       $actor1->sort();
+       echo $actor1->getFilmography();      
 
        echo $actor1->getFilmography();
 
-    //    echo $role1->getActorsInRole();
+       echo $role1->getActorsInRole();
        
-    //    echo $movie1->getCasting();   
+       echo $movie1->getCasting();   
 
-    //    echo $movie3->getCasting();
+       echo $movie3->getCasting();
 
-    //    echo $role3->getActorsInRole();
+       echo $role3->getActorsInRole();
 
-    //    echo $action->getMoviesList(); 
+       echo $action->getMoviesList(); 
 
-    //    echo $movie1->getInfosMovie(); 
+       echo $movie1->getInfosMovie(); 
 
-    //    echo $movie2->getInfosMovie();
+       echo $movie2->getInfosMovie();
 
-    //    echo $movie3->getInfosMovie();
+       echo $movie3->getInfosMovie();
 
-    //    echo $movie4->getInfosMovie();           
+       echo $movie4->getInfosMovie();   
 
     ?>
 
