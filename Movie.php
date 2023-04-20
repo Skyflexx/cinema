@@ -135,11 +135,11 @@
 
         }
 
-        public function getInfosMovie(){
+        public function getInfosMovie(){               
 
-                return "<h3>$this</h3> Réalisé par " . $this->realisator . "<br> Durée : ". $this->durationFormat(). ". <br> Genre : ". $this->genre
+                return "<div class='card' style='width: 18rem;'><h5 class='card-title'>$this</h5> <img src='$this->photoMovie' class='img-rounded' width='200' height='300'>  <div class='card-body'>Réalisé par " . $this->realisator . "<br> Durée : ". $this->durationFormat(). ". <br> Genre : ". $this->genre
     
-                ." <br> Résumé : ".$this->synopsis."<br>"."<img class='photoMovie' src='$this->photoMovie'>"; // Insertion de l'image du film  avec une classe préétablie pour le css                           
+                ." <br> Résumé : ".$this->synopsis."<br>"."</div></div>"; // Insertion de l'image du film  avec une classe préétablie pour le css                   
     
             }
 

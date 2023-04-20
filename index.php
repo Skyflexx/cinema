@@ -1,10 +1,26 @@
-<h1>Cinéma</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cinema Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    
+  <div class="container">
+  
 
-<p>
-    Vous avez en charge de gérer différentes entités autour de la thématique du cinéma.
-</p>
 
-<h2>
+    <h1>Cinéma</h1>
+
+        <p>
+            Vous avez en charge de gérer différentes entités autour de la thématique du cinéma.
+        </p>
+
+    <h2>
 
     <?php 
 
@@ -59,9 +75,8 @@
 
        echo $artsMartiaux->getMoviesList();       
 
-       echo $actor1->getFilmography();      
-
-       echo $actor1->getFilmography();
+       echo $actor1->getFilmography(); 
+       
 
        echo $role1->getActorsInRole();
        
@@ -90,4 +105,26 @@
 
     ?>
 
-</h2>
+    </h2>
+
+    
+    </div>
+
+   
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
