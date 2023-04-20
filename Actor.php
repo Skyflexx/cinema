@@ -14,6 +14,10 @@
 
         }
 
+        public function getCastings(){
+                return $this->castings;
+        }
+
         
         public function getFirstname()
         {
@@ -70,31 +74,38 @@
                 return $this;
         }
 
-        // METHODES GENERALES
-        
-        
+        // METHODES GENERALES        
 
         public function addCasting($casting){                  
                 
-                $this->castings[] = $casting; 
+                $this->castings[] = $casting;                
         
-        }
+        } 
+       
+        public function getFilmography(){  
+                
+                $listOfMovies = $this->castings;
 
-        public function getFilmography(){          
-               
+                usort($listOfMovies, [Actor::class, "movieSort"]);
 
-            $list = "<h3> Filmographie de $this : </h3>";
+                $list = "<h3> Filmographie de $this : </h3>";
 
-            foreach ($this->castings as $casting){
+                foreach ($listOfMovies as $casting){                
 
                 $list .= $casting->getMovie()." <br> ";
 
-            }              
+                }              
 
             return $list;
         }
 
-        
+        private static function movieSort($casting1, $casting2){ 
+                
+                $date1 = strtotime($casting1->getMovie()->getReleaseDate()->format("y-m-d"));
+                $date2 = strtotime($casting1->getMovie()->getReleaseDate()->format("y-m-d"));
+
+                return ( $date1 <=> $date2) ? -1 : 1;
+        }        
 
         public function __toString(){
             return $this->firstname." ".$this->lastname;

@@ -57,9 +57,7 @@
                 $this->movie = $movie;
 
                 return $this;
-        }
-
-              
+        }              
         
     }
 

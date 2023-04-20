@@ -53,6 +53,8 @@
         $cast6 = new Casting ($actor4, $role3, $movie4); // Keaton dans Batman
 
        
+
+       
        echo $tarantino->getMoviesList();
 
        echo $artsMartiaux->getMoviesList();       
@@ -78,6 +80,13 @@
        echo $movie3->getInfosMovie();
 
        echo $movie4->getInfosMovie();   
+
+    // echo $cast1->getMovie()->getReleaseDate()->format("y-m-d");
+    // echo $cast3->getMovie()->getReleaseDate()->format("y-m-d");
+
+    // echo "<pre>";
+    // var_dump($actor1); // or var_dump($data);
+    // echo "</pre>";
 
     ?>
 

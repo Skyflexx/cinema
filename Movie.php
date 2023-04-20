@@ -2,8 +2,7 @@
 
     // CLasse Film, chaque film est lié à un réalisateur. Ici on va push l'array de la filmographie du réal. Et on créé un array avec les acteurs dedans.
 
-    require "tools.php";
-
+    
     class Movie{
 
         
@@ -33,7 +32,7 @@
             // Lors de la création d'un film on push immédiatement sur la filmographie du réalisateur et sur le Genre concerné.
 
             $realisator->addMovie($this);
-            $genre->addMovie($this);
+            $genre->addMovie($this);            
         
         }
        
@@ -128,7 +127,7 @@
 
                 $hours = intdiv($this->duration, 60); // exemple : division entière de 140 par 60 minutes . On obtient 2 par exemple. 2 heures.
 
-                $minuts = $this->duration % 60; // 140 modulo 60, le modulo c'est le restant de la division euclidienne. Une division qui récupère le reste.
+                $minuts = $this->duration % 60; // 140 modulo 60, le modulo c'est le restant de la division euclidienne. Une division qui récupère le reste soit 20 min.
 
                 $duration = "$hours heures, $minuts minutes";
 
@@ -148,11 +147,12 @@
 
             $this->castings[] = $casting; // Ajoute l'objet Casting au tableau des Castings. C'est depuis ce tableau qu'on peut récupérer pour ce film ($this), le nom de l'acteur etc.            
 
-        //     sortMovies($this->castings);           
+        //     sortMovies($this->castings);
+                          
 
         }
 
-        public function getCasting(){
+        public function getCasting(){               
 
             $list = "<h3> Casting de $this : </h3>";
 
@@ -163,7 +163,7 @@
             }
 
             return $list;
-        }
+        }       
         
       
         public function __toString(){
