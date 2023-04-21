@@ -61,7 +61,7 @@
 
   ?>
 
-  <div class="p-5 bg-warning text-white text-center">
+  <div class="p-5 bg-warning text-dark text-center">
     <h1>CINEMA</h1>
     <p class="fs-2"> Vous avez en charge de gérer différentes entités autour de la thématique du cinéma</p> 
   </div>
