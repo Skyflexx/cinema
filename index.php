@@ -77,7 +77,7 @@
         <div class="card-body">
           <img src='<?php echo $movie1->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
           <p class="fs-3 text-justify"><?php echo $movie1->getSynopsis()?></p></div>        
-          <div class=" fs-3 card-footer">Réalisé par : <?php echo $movie1->getRealisator()?></div>
+          <div class=" fs-3 card-footer"><p class ="fs-4">Durée : <?php echo $movie1->durationFormat()?></p> Réalisé par : <?php echo $movie1->getRealisator()?></div>
 
       </div>
     </div>
@@ -88,7 +88,7 @@
         <div class="card-header fs-2"><?php echo $movie2?></div>
         <div class="card-body"><img src='<?php echo $movie2->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
         <p class="fs-3 text-justify"><?php echo $movie2->getSynopsis()?></p> </div>       
-        <div class="fs-3 card-footer">Réalisé par : <?php echo $movie2->getRealisator()?></div>
+        <div class="fs-3 card-footer"><p class ="fs-4">Durée : <?php echo $movie2->durationFormat()?></p> Réalisé par : <?php echo $movie2->getRealisator()?></div>
       </div>
     </div>
 
@@ -98,7 +98,7 @@
         <div class="card-header fs-2"><?php echo $movie3?></div>
         <div class="card-body"><img src='<?php echo $movie3->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
         <p class="fs-3 text-justify"><?php echo $movie3->getSynopsis()?></p></div>        
-        <div class="fs-3 card-footer">Réalisé par : <?php echo $movie3->getRealisator()?></div>
+        <div class="fs-3 card-footer"><p class ="fs-4">Durée : <?php echo $movie3->durationFormat()?></p> Réalisé par : <?php echo $movie3->getRealisator()?></div>
       </div>
     </div>
 
@@ -108,7 +108,7 @@
         <div class="card-header fs-2"><?php echo $movie4?></div>
         <div class="card-body"><img src='<?php echo $movie4->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
         <p class="fs-3 text-justify"><?php echo $movie4->getSynopsis()?></p></div>        
-        <div class="fs-3 card-footer">Réalisé par : <?php echo $movie4->getRealisator()?></div>
+        <div class="fs-3 card-footer"><p class ="fs-4">Durée : <?php echo $movie4->durationFormat()?></p> Réalisé par : <?php echo $movie4->getRealisator()?></div>
       </div>
     </div>   
 
