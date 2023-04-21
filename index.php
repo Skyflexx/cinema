@@ -59,31 +59,6 @@
 
     $cast6 = new Casting ($actor4, $role3, $movie4); // Keaton dans Batman
 
-    
-
-    
-  //  echo $tarantino->getMoviesList();
-
-  //  echo $artsMartiaux->getMoviesList();       
-
-  //  echo $actor1->getFilmography(); 
-    
-
-  //  echo $role1->getActorsInRole();
-    
-  //  echo $movie1->getCasting();   
-
-  //  echo $movie3->getCasting();
-
-  //  echo $role3->getActorsInRole();
-
-  //  echo $action->getMoviesList(); 
-
-
-  //  echo $movie2->getInfosMovie();
-
-  //  echo $movie3->getInfosMovie();  
-
   ?>
 
   <div class="p-5 bg-warning text-white text-center">
@@ -135,10 +110,63 @@
         <p class="fs-3 text-justify"><?php echo $movie4->getSynopsis()?></p></div>        
         <div class="fs-3 card-footer">Réalisé par : <?php echo $movie4->getRealisator()?></div>
       </div>
-    </div>
+    </div>   
 
     
   </div>   
+
+   <div class="container  fs-3 bg-dark text-white text-center">
+    
+   <?php echo $tarantino->getMoviesList(); ?>
+
+   </div>
+
+   <div class="container fs-3 mt-3 bg-dark text-white text-center">
+    
+   <?php echo $artsMartiaux->getMoviesList(); ?>
+
+   </div>
+
+   <div class="container fs-3 mt-3 bg-dark text-white text-center">
+    
+   <?php echo $actor1->getFilmography(); ?>
+
+   </div>
+
+   <div class="container fs-3 mt-3 bg-dark text-white text-center">
+    
+   <?php echo $movie1->getCasting(); ?>
+
+   </div>
+
+   <div class="container fs-3 mt-3 bg-dark text-white text-center">
+    
+   <?php echo $movie3->getCasting(); ?>
+
+   </div>
+
+
+  <?php
+
+// echo $tarantino->getMoviesList();
+
+// echo $artsMartiaux->getMoviesList();       
+
+// echo $actor1->getFilmography(); 
+
+
+// echo $role1->getActorsInRole();
+
+// echo $movie1->getCasting();   
+
+// echo $movie3->getCasting();
+
+// echo $role3->getActorsInRole();
+
+// echo $action->getMoviesList(); 
+
+
+?>
 
 </body>
 </html>
