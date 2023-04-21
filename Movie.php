@@ -3,9 +3,7 @@
     // CLasse Film, chaque film est lié à un réalisateur. Ici on va push l'array de la filmographie du réal. Et on créé un array avec les acteurs dedans.
 
     
-    class Movie{
-
-        
+    class Movie{        
 
         private string $name;
         private DateTime $releaseDate;
@@ -14,8 +12,7 @@
         private string $synopsis; // le résumé du film      
         private Realisator $realisator;
         private array $castings;
-        private string $photoMovie;
-       
+        private string $photoMovie;       
 
         public function __construct(string $name, string $releaseDate, int $duration, Genre $genre, string $synopsis, Realisator $realisator, string $photoMovie){
 
@@ -26,8 +23,7 @@
             $this->synopsis = $synopsis;
             $this->realisator = $realisator;  
             $this->castings = array();  
-            $this->photoMovie = $photoMovie;
-                 
+            $this->photoMovie = $photoMovie;                 
 
             // Lors de la création d'un film on push immédiatement sur la filmographie du réalisateur et sur le Genre concerné.
 
@@ -36,6 +32,57 @@
         
         }
        
+        
+        // METHODES PRINCIPALES
+                
+
+        public function durationFormat(){ // Fonction permettant de convertir la durée d'un film en nbr d'heures et minutes.
+
+                $hours = intdiv($this->duration, 60); // exemple : division entière de 140 par 60 minutes . On obtient 2 par exemple. 2 heures.
+
+                $minuts = $this->duration % 60; // 140 modulo 60, le modulo c'est le restant de la division euclidienne. Une division qui récupère le reste soit 20 min.
+
+                $duration = "$hours heures, $minuts minutes";
+
+                return $duration;
+
+        }
+
+        public function getInfosMovie(){               
+
+                return "<img src='$this->photoMovie' class='img-rounded' width='200' height='300'> ". $this->realisator . "<br> Durée : ". $this->durationFormat(). ". <br> Genre : ". $this->genre
+    
+                ." <br> Résumé : ".$this->synopsis."<br>"; // Insertion de l'image du film  avec une classe préétablie pour le css                   
+    
+            }
+
+        public function addCasting($casting){
+
+            $this->castings[] = $casting; // Ajoute l'objet Casting au tableau des Castings. C'est depuis ce tableau qu'on peut récupérer pour ce film ($this), le nom de l'acteur etc.            
+
+        //     sortMovies($this->castings);
+                          
+
+        }
+
+        public function getCasting(){               
+
+            $list = "<h3> Casting de $this : </h3>";
+
+            foreach ($this->castings as $casting){
+
+                $list .=  $casting->getActor(). " dans le role de : ".$casting->getRole()." <br> ";
+
+            }
+
+            return $list;
+        }   
+               
+      
+        public function __toString(){
+            return $this->name;
+        }
+
         public function getName()
         {
                 return $this->name;
@@ -119,58 +166,20 @@
                 return $this;
         }
 
-        // METHODES PRINCIPALES
+        public function getPhotoMovie()
+        {
+                return $this->photoMovie;
+        }
 
         
+        public function setPhotoMovie($photoMovie)
+        {
+                $this->photoMovie = $photoMovie;
 
-        public function durationFormat(){ // Fonction permettant de convertir la durée d'un film en nbr d'heures et minutes.
-
-                $hours = intdiv($this->duration, 60); // exemple : division entière de 140 par 60 minutes . On obtient 2 par exemple. 2 heures.
-
-                $minuts = $this->duration % 60; // 140 modulo 60, le modulo c'est le restant de la division euclidienne. Une division qui récupère le reste soit 20 min.
-
-                $duration = "$hours heures, $minuts minutes";
-
-                return $duration;
-
+                return $this;
         }
 
-        public function getInfosMovie(){               
-
-                return "<img src='$this->photoMovie' class='img-rounded' width='200' height='300'> ". $this->realisator . "<br> Durée : ". $this->durationFormat(). ". <br> Genre : ". $this->genre
-    
-                ." <br> Résumé : ".$this->synopsis."<br>"; // Insertion de l'image du film  avec une classe préétablie pour le css                   
-    
-            }
-
-        public function addCasting($casting){
-
-            $this->castings[] = $casting; // Ajoute l'objet Casting au tableau des Castings. C'est depuis ce tableau qu'on peut récupérer pour ce film ($this), le nom de l'acteur etc.            
-
-        //     sortMovies($this->castings);
-                          
-
-        }
-
-        public function getCasting(){               
-
-            $list = "<h3> Casting de $this : </h3>";
-
-            foreach ($this->castings as $casting){
-
-                $list .=  $casting->getActor(). " dans le role de : ".$casting->getRole()." <br> ";
-
-            }
-
-            return $list;
-        }   
-               
-      
-        public function __toString(){
-            return $this->name;
-        }
-
-
+        
     }
 
 
