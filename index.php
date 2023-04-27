@@ -5,8 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Cinema Bootstrap</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">      
   </head>
 
 
@@ -62,8 +61,7 @@
   ?>
 
   <div class="p-5 bg-warning text-dark text-center">
-    <h1>CINEMA</h1>
-    <p class="fs-2"> Vous avez en charge de gérer différentes entités autour de la thématique du cinéma</p> 
+    <h1 class ="display-1 "><strong>CINEMA</strong></h1>     
   </div>
 
 
@@ -167,7 +165,7 @@
 
 
 ?>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
