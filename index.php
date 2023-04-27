@@ -5,19 +5,17 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Cinema Bootstrap</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">      
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">  
   </head>
-
-
 <body>  
-
 
   <?php 
 
     spl_autoload_register(function ($class_name) {
         include $class_name . '.php';
     });
-          
+    
+    // Instanciations
 
     $tarantino = new Realisator ("Quentin", "Tarantino", "M", "03/27/1963");
     $nolan = new Realisator ("Christopher", "Nolan", "M", "07/01/1970");
@@ -44,18 +42,11 @@
     $actor3 = new Actor ("Christian", "Bale", "M", "01/30/1974");
     $actor4 = new Actor ("Michael", "Keaton", "M", "09/05/1951");
 
-
-    $cast3 = new Casting ($actor1, $role1, $movie2); // Uma dans Kill Bill 2      
-    $cast4 = new Casting ($actor2, $role2, $movie2); // David dans Kill Bill 2
-
-
     $cast1 = new Casting ($actor1, $role1, $movie1); // Uma dans kill bill
     $cast2 = new Casting ($actor2, $role2, $movie1); // David dans kill bill 1
-
-    
-
+    $cast3 = new Casting ($actor1, $role1, $movie2); // Uma dans Kill Bill 2      
+    $cast4 = new Casting ($actor2, $role2, $movie2); // David dans Kill Bill 2  
     $cast5 = new Casting ($actor3, $role3, $movie3); // Bale dans batman begins
-
     $cast6 = new Casting ($actor4, $role3, $movie4); // Keaton dans Batman
 
   ?>
@@ -64,19 +55,17 @@
     <h1 class ="display-1 "><strong>CINEMA</strong></h1>     
   </div>
 
-
   <div class="d-flex justify-content-center bg-light mb-3">    
 
     <div class="container mt-3">
       <h2>Genre : <?php echo $movie1->getGenre()?></h2>
-      <div class="card bg-dark text-center text-white">
-        
+      <div class="card bg-dark text-center text-white">        
         <div class="card-header fs-2"><?php echo $movie1?></div>
         <div class="card-body">
           <img src='<?php echo $movie1->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
-          <p class="fs-3 text-justify"><?php echo $movie1->getSynopsis()?></p></div>        
+          <p class="fs-3 text-justify"><?php echo $movie1->getSynopsis()?></p>
+        </div>        
           <div class=" fs-3 card-footer"><p class ="fs-4">Durée : <?php echo $movie1->durationFormat()?></p> Réalisé par : <?php echo $movie1->getRealisator()?></div>
-
       </div>
     </div>
 
@@ -84,8 +73,10 @@
       <h2>Genre : <?php echo $movie2->getGenre()?></h2>
       <div class="card bg-dark text-center text-white">
         <div class="card-header fs-2"><?php echo $movie2?></div>
-        <div class="card-body"><img src='<?php echo $movie2->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
-        <p class="fs-3 text-justify"><?php echo $movie2->getSynopsis()?></p> </div>       
+        <div class="card-body">
+          <img src='<?php echo $movie2->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
+          <p class="fs-3 text-justify"><?php echo $movie2->getSynopsis()?></p>
+        </div>       
         <div class="fs-3 card-footer"><p class ="fs-4">Durée : <?php echo $movie2->durationFormat()?></p> Réalisé par : <?php echo $movie2->getRealisator()?></div>
       </div>
     </div>
@@ -94,8 +85,10 @@
       <h2>Genre : <?php echo $movie3->getGenre()?></h2>
       <div class="card bg-dark text-center text-white">
         <div class="card-header fs-2"><?php echo $movie3?></div>
-        <div class="card-body"><img src='<?php echo $movie3->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
-        <p class="fs-3 text-justify"><?php echo $movie3->getSynopsis()?></p></div>        
+        <div class="card-body">
+          <img src='<?php echo $movie3->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
+          <p class="fs-3 text-justify"><?php echo $movie3->getSynopsis()?></p>
+        </div>        
         <div class="fs-3 card-footer"><p class ="fs-4">Durée : <?php echo $movie3->durationFormat()?></p> Réalisé par : <?php echo $movie3->getRealisator()?></div>
       </div>
     </div>
@@ -104,67 +97,46 @@
       <h2>Genre : <?php echo $movie4->getGenre()?></h2>
       <div class="card bg-dark text-center text-white">
         <div class="card-header fs-2"><?php echo $movie4?></div>
-        <div class="card-body"><img src='<?php echo $movie4->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
-        <p class="fs-3 text-justify"><?php echo $movie4->getSynopsis()?></p></div>        
+        <div class="card-body">
+          <img src='<?php echo $movie4->getPhotoMovie()?>' class='img-rounded' width='200' height='300'>
+          <p class="fs-3 text-justify"><?php echo $movie4->getSynopsis()?></p>
+        </div>        
         <div class="fs-3 card-footer"><p class ="fs-4">Durée : <?php echo $movie4->durationFormat()?></p> Réalisé par : <?php echo $movie4->getRealisator()?></div>
       </div>
     </div>   
-
     
-  </div>   
+  </div>     
 
    <div class="container  fs-3 bg-dark text-white text-center">
     
-   <?php echo $tarantino->getMoviesList(); ?>
+    <?php echo $tarantino->getMoviesList(); ?>
 
    </div>
 
    <div class="container fs-3 mt-3 bg-dark text-white text-center">
     
-   <?php echo $artsMartiaux->getMoviesList(); ?>
+    <?php echo $artsMartiaux->getMoviesList(); ?>
 
    </div>
 
    <div class="container fs-3 mt-3 bg-dark text-white text-center">
     
-   <?php echo $actor1->getFilmography(); ?>
+    <?php echo $actor1->getFilmography(); ?>
 
    </div>
 
    <div class="container fs-3 mt-3 bg-dark text-white text-center">
     
-   <?php echo $movie1->getCasting(); ?>
+    <?php echo $movie1->getCasting(); ?>
 
    </div>
 
    <div class="container fs-3 mt-3 bg-dark text-white text-center">
     
-   <?php echo $movie3->getCasting(); ?>
+    <?php echo $movie3->getCasting(); ?>
 
    </div>
-
-
-  <?php
-
-// echo $tarantino->getMoviesList();
-
-// echo $artsMartiaux->getMoviesList();       
-
-// echo $actor1->getFilmography(); 
-
-
-// echo $role1->getActorsInRole();
-
-// echo $movie1->getCasting();   
-
-// echo $movie3->getCasting();
-
-// echo $role3->getActorsInRole();
-
-// echo $action->getMoviesList(); 
-
-
-?>
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
