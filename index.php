@@ -32,7 +32,6 @@
 
     $movie4 = new Movie ("Batman", "01/01/1989", 126, $action, "Batman est un film fantastique et de super-héros américano-britannique de Tim Burton, sorti en 1989.", $burton, "https://fr.web.img5.acsta.net/c_310_420/pictures/22/10/07/09/47/0708130.jpg");
     
-
     $role1 = new Role ("Beatrix Kiddo");
     $role2 = new Role ("Bill");
     $role3 = new Role("Batman");
